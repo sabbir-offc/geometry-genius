@@ -1,38 +1,59 @@
-function calculateTriangleArea(base, height) {
+//reusable function.
+function getInputValue(fieldID) {
+  const inputField = document.getElementById(fieldID);
+  const inputValueText = inputField.value;
+  const value = parseFloat(inputValueText);
+  return value;
+}
+//set innerText function
+function setElementInnerText(elementId,areaSum){
+  const element = document.getElementById(elementId);
+  element.innerText = areaSum;
+}
 
-  const baseField = document.getElementById(base);
-  const baseValueText = baseField.value;
-  const baseValue = parseFloat(baseValueText);
- 
-  const heightField = document.getElementById(height);
-  const heightValueText = heightField.value;
-  const heightValue = parseFloat(heightValueText);
-  if(isNaN(heightValue,baseValue)){
-    alert('Please Enter a valid Value');
+function calculateTriangleArea() {
+  const base = getInputValue("triangle-base");
+  const height = getInputValue("triangle-height");
+
+  if (isNaN(base, height)) {
+    alert("Please Enter a valid Value");
     return;
   }
-  console.log(baseValue, heightValue);
-
-  const area = 0.5 * baseValue * heightValue;
-
-  const areaSpan = document.getElementById("triangle-area");
-  areaSpan.innerText = area;
+  const area = 0.5 * base * height;
+  setElementInnerText('triangle-area', area)
+  
 }
 
 function calculateRectangleArea() {
-  const widthField = document.getElementById('rectangle-width');
-  const widthValueText = widthField.value;
-  const widthValue = parseFloat(widthValueText);
+  const width = getInputValue("rectangle-width");
+  const length = getInputValue("rectangle-length");
+  if (isNaN(width, length)) {
+    alert("Please Enter a valid Value");
+    return;
+  }
+  const area = width * length;
+  setElementInnerText('rectangle-area', area)
+}
 
-  const lengthField = document.getElementById('rectangle-length');
-  const lengthValueText = lengthField.value;
-  const lengthValue = parseFloat(lengthValueText);
-  console.log(widthValue, lengthValue);
+//reusable function
+function calculateParallelogramArea() {
+  const base = getInputValue("parallelogram-base");
+  const height = getInputValue("parallelogram-height");
+  if (isNaN(base, height)) {
+    alert("Please Enter a valid Value");
+    return;
+  }
+  const area = base * height;
+  setElementInnerText('parallelogram-area', area)
+}
 
-
-  const area = widthValue * lengthValue;
-
-  const areaSpan = document.getElementById("rectangle-area");
-  areaSpan.innerText = area;
-
+function calculateElipseArea(){
+  const majorRadious = getInputValue('elipse-major');
+  const minorRadious = getInputValue('elipse-minor');
+  if (isNaN(majorRadious, minorRadious)) {
+    alert("Please Enter a valid Value");
+    return;
+  }
+  const area = 3.14 * majorRadious * minorRadious;
+  setElementInnerText('elipse-area', area);
 }

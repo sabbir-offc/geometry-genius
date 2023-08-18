@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gemetry Genius</title>
+    <title>Geometry Genius</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/triangle.png" type="image/x-icon">
     <!-- Google Font. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,7 +38,7 @@
             </figure>
             <div class="card-body">
               <h2 class="text-3xl text-center font-bold">Triangle</h2>
-              <p class="text-center">Area (A) = 0.5 X b X h</p>
+              <p class="text-center">Area (A) = 0.5 x b x h</p>
               <p class="text-center">
                 <input
                   type="text"
@@ -79,7 +81,7 @@
             </figure>
             <div class="card-body">
               <h2 class="text-3xl text-center font-bold">Rectangle</h2>
-              <p class="text-center">Area (A) = w X I</p>
+              <p class="text-center">Area (A) = w x I</p>
               <p class="text-center">
                 <input
                   type="text"
@@ -121,31 +123,145 @@
               <img src="images/parallelogram.png" alt="Geometry Shape" />
             </figure>
             <div class="card-body">
-              <h2 class="text-3xl text-center font-bold">Rectangle</h2>
-              <p class="text-center">Area (A) = w X I</p>
+              <h2 class="text-3xl text-center font-bold">Parallelogram</h2>
+              <p class="text-center">Area (A) = b x h</p>
               <p class="text-center">
                 <input
                   type="text"
                   class="bg-[#F1F1F1] w-24 px-2 py-1"
                   placeholder="base"
                   name=""
-                  id="rectangle-base"
+                  id="parallelogram-base"
                 />
                 <span class="ml-2">cm</span>
-
+                <!-- parallelogram height -->
                 <input
                   type="text"
                   class="bg-[#F1F1F1] w-24 px-2 py-1 ml-4"
                   placeholder="height"
                   name=""
-                  id="rectangle-height"
+                  id="parallelogram-height"
                 />
                 <span class="ml-2">cm</span>
               </p>
-              <p>Area:<span id=""></span></p>
+              <p class="text-2xl">Area: <span class="font-semibold" id="parallelogram-area">0</span> cm<sup>2</sup></p>
               <div class="card-actions">
                 <button
-                  onclick="calculateRectangleArea()"
+                  onclick="calculateParallelogramArea()"
+                  class="bg-[#1090D8] w-full rounded-xl text-xl mx-auto py-4 px-32 text-white font-bold text-center"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Fourth Card -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src="./images/rhombus.png" alt="Geometry Shape" />
+            </figure>
+            <div class="card-body">
+              <h2 class="text-3xl text-center font-bold">Rhombus</h2>
+              <p class="text-center">Area (A) = 0.5 x d<sub>1</sub> x d<sub>2</sub></p>
+              <p class="text-center">
+                <input
+                  type="text"
+                  class="bg-[#F1F1F1] w-24 px-2 py-1"
+                  placeholder="diagonal 1"
+                  name=""
+                  id="rhombus-length1"
+                />
+                <span class="ml-2">cm</span>
+                <!-- Rhombus length of diagonal 2 -->
+                <input
+                  type="text"
+                  class="bg-[#F1F1F1] w-24 px-2 py-1 ml-4"
+                  placeholder="diagonal 2"
+                  name=""
+                  id="rhombus-length2"
+                />
+                <span class="ml-2">cm</span>
+              </p>
+              <p class="text-2xl">Area: <span class="font-semibold" id="parallelogram-area">0</span> cm<sup>2</sup></p>
+              <div class="card-actions">
+                <button
+                  onclick="calculateParrallelogramArea()"
+                  class="bg-[#1090D8] w-full rounded-xl text-xl mx-auto py-4 px-32 text-white font-bold text-center"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Fiveth Card -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src="./images/pentagon.png" alt="Geometry Shape" />
+            </figure>
+            <div class="card-body">
+              <h2 class="text-3xl text-center font-bold">Pentagon</h2>
+              <p class="text-center">Area (A) = 0.5 x p x b</p>
+              <p class="text-center">
+                <input
+                  type="text"
+                  class="bg-[#F1F1F1] w-24 px-2 py-1"
+                  placeholder="side of the Pentagon"
+                  name=""
+                  id="parallelogram-base"
+                />
+                <span class="ml-2">cm</span>
+                <!--  -->
+                <input
+                  type="text"
+                  class="bg-[#F1F1F1] w-24 px-2 py-1 ml-4"
+                  placeholder="apothem length"
+                  name=""
+                  id="parallelogram-height"
+                />
+                <span class="ml-2">cm</span>
+              </p>
+              <p class="text-2xl">Area: <span class="font-semibold" id="parallelogram-area">0</span> cm<sup>2</sup></p>
+              <div class="card-actions">
+                <button
+                  onclick="calculateParallrelogramArea()"
+                  class="bg-[#1090D8] w-full rounded-xl text-xl mx-auto py-4 px-32 text-white font-bold text-center"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Sixth Card -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src="./images/ellipse.png" alt="Geometry Shape" />
+            </figure>
+            <div class="card-body">
+              <h2 class="text-3xl text-center font-bold">Ellipse</h2>
+              <p class="text-center">Area (A) = &#960;ab</p>
+              <p class="text-center">
+                <input
+                  type="text"
+                  class="bg-[#F1F1F1] w-24 px-2 py-1"
+                  placeholder="semi-major"
+                  name=""
+                  id="elipse-major"
+                />
+                <span class="ml-2">cm</span>
+                <!-- elipse -->
+                <input
+                  type="text"
+                  class="bg-[#F1F1F1] w-24 px-2 py-1 ml-4"
+                  placeholder="semi-minor"
+                  name=""
+                  id="elipse-minor"
+                />
+                <span class="ml-2">cm</span>
+              </p>
+              <p class="text-2xl">Area: <span class="font-semibold" id="elipse-area">0</span> cm<sup>2</sup></p>
+              <div class="card-actions">
+                <button
+                  onclick="calculateElipseArea()"
                   class="bg-[#1090D8] w-full rounded-xl text-xl mx-auto py-4 px-32 text-white font-bold text-center"
                 >
                   Calculate
