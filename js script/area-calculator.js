@@ -1,11 +1,16 @@
 function calculateTriangleArea(base, height) {
+
   const baseField = document.getElementById(base);
   const baseValueText = baseField.value;
   const baseValue = parseFloat(baseValueText);
-
+ 
   const heightField = document.getElementById(height);
   const heightValueText = heightField.value;
   const heightValue = parseFloat(heightValueText);
+  if(isNaN(heightValue,baseValue)){
+    alert('Please Enter a valid Value');
+    return;
+  }
   console.log(baseValue, heightValue);
 
   const area = 0.5 * baseValue * heightValue;
