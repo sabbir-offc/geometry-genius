@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemetry Genius</title>
+    <!-- Google Font. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS And DaisyUI -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="my-28">
+    <header></header>
+    <main>
+      <!--Main Container -->
+      <section class="flex flex-col lg:flex-row">
+        <!-- shape container -->
+        <div
+          class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <!-- First Card -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src="images/triangle.png" alt="Geometry Shape" />
+            </figure>
+            <div class="card-body">
+              <h2 class="text-3xl text-center font-bold">Triangle</h2>
+              <p class="text-center">Area (A) = 0.5 X b X h</p>
+              <p class="text-center">
+                <input
+                  type="text"
+                  class="bg-[#F1F1F1] w-24 px-2 py-1"
+                  placeholder="base"
+                  name=""
+                  id="triangle-base"
+                />
+                <span class="ml-2">cm</span>
+                <!-- triangle height -->
+                <input
+                  type="text"
+                  class="bg-[#F1F1F1] w-24 px-2 py-1 ml-4"
+                  placeholder="height"
+                  name=""
+                  id="triangle-height"
+                />
+                <span class="ml-2">cm</span>
+              </p>
+              <p class="text-2xl">
+                Area:
+                <span class="font-semibold" id="triangle-area"></span> cm<sup
+                  >2</sup
+                >
+              </p>
+              <div class="card-actions">
+                <button
+                  onclick="calculateTriangleArea('triangle-base', 'triangle-height')"
+                  class="bg-[#1090D8] w-full rounded-xl text-xl mx-auto py-4 px-32 text-white font-bold text-center"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Second Card -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src="images/rectangle.png" alt="Geometry Shape" />
+            </figure>
+            <div class="card-body">
+              <h2 class="text-3xl text-center font-bold">Rectangle</h2>
+              <p class="text-center">Area (A) = w X I</p>
+              <p class="text-center">
+                <input
+                  type="text"
+                  class="bg-[#F1F1F1] w-24 px-2 py-1"
+                  placeholder="width"
+                  name=""
+                  id="rectangle-width"
+                />
+                <span class="ml-2">cm</span>
+                <!-- rectangle length -->
+                <input
+                  type="text"
+                  class="bg-[#F1F1F1] w-24 px-2 py-1 ml-4"
+                  placeholder="length"
+                  name=""
+                  id="rectangle-length"
+                />
+                <span class="ml-2">cm</span>
+              </p>
+              <p class="text-2xl">
+                Area:
+                <span class="font-semibold" id="rectangle-area"></span> cm<sup
+                  >2</sup
+                >
+              </p>
+              <div class="card-actions">
+                <button
+                  onclick="calculateRectangleArea()"
+                  class="bg-[#1090D8] w-full rounded-xl text-xl mx-auto py-4 px-32 text-white font-bold text-center"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Third Card -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure>
+              <img src="images/parallelogram.png" alt="Geometry Shape" />
+            </figure>
+            <div class="card-body">
+              <h2 class="text-3xl text-center font-bold">Rectangle</h2>
+              <p class="text-center">Area (A) = w X I</p>
+              <p class="text-center">
+                <input
+                  type="text"
+                  class="bg-[#F1F1F1] w-24 px-2 py-1"
+                  placeholder="base"
+                  name=""
+                  id="rectangle-base"
+                />
+                <span class="ml-2">cm</span>
+
+                <input
+                  type="text"
+                  class="bg-[#F1F1F1] w-24 px-2 py-1 ml-4"
+                  placeholder="height"
+                  name=""
+                  id="rectangle-height"
+                />
+                <span class="ml-2">cm</span>
+              </p>
+              <p>Area:<span id=""></span></p>
+              <div class="card-actions">
+                <button
+                  onclick="calculateRectangleArea()"
+                  class="bg-[#1090D8] w-full rounded-xl text-xl mx-auto py-4 px-32 text-white font-bold text-center"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- area calculator. -->
+        <div class="w-[435px]">
+          <div class="text-4xl">Area Calculator</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js script/area-calculator.js"></script>
+  </body>
+</html>
