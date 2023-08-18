@@ -21,6 +21,7 @@ function calculateTriangleArea() {
   }
   const area = 0.5 * base * height;
   setElementInnerText('triangle-area', area)
+  addToCalculationEnty('Triangle', area);
   
 }
 
@@ -33,6 +34,7 @@ function calculateRectangleArea() {
   }
   const area = width * length;
   setElementInnerText('rectangle-area', area)
+  addToCalculationEnty('Rectangle', area);
 }
 
 //reusable function
@@ -45,6 +47,7 @@ function calculateParallelogramArea() {
   }
   const area = base * height;
   setElementInnerText('parallelogram-area', area)
+  addToCalculationEnty('Parallelogram', area);
 }
 
 function calculateElipseArea(){
@@ -54,6 +57,23 @@ function calculateElipseArea(){
     alert("Please Enter a valid Value");
     return;
   }
-  const area = 3.14 * majorRadious * minorRadious;
-  setElementInnerText('elipse-area', area);
+  const area = Math.PI * majorRadious * minorRadious;
+  const areaTwoDecimal = area.toFixed(2);
+  setElementInnerText('elipse-area', areaTwoDecimal);
+  addToCalculationEnty('Elipse', areaTwoDecimal);
+}
+
+//add to calculation entry.
+/**
+ * 
+ * 
+ */
+function addToCalculationEnty(shapeType, area){
+  const areaCalculation = document.getElementById('area-calculation');
+  const count = areaCalculation.childElementCount;
+
+  const p = document.createElement('p');
+  p.classList.add('my-4')
+  p.innerHTML = `${count + 1} ${shapeType} ${area} cm<sup>2</sup> <button class="btn btn-sm btn-primary" >Convert</button>`
+  areaCalculation.appendChild(p);
 }
